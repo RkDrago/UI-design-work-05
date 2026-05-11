@@ -185,6 +185,9 @@ nav .active {
     justify-content: center;
     align-items: center;
 }
+.new{
+    perspective: 1000px;
+}
 
 .circle-glow {
     position: absolute;
@@ -193,6 +196,8 @@ nav .active {
     border-radius: 50%;
     border: 2px solid #00ffe1;
     box-shadow: 0 0 80px #00ffe1;
+    animation: pulse 7s ease-in-out infinite;
+    transform-style: preserve-3d;
 }
 
 .hero-image {
@@ -200,6 +205,23 @@ nav .active {
     max-width: 600px;
     position: relative;
     z-index: 2;
+}
+
+@keyframes pulse {
+  0% {
+    transform: translatez(0);
+    opacity: 0.5;
+}
+
+50% {
+    transform: translatez(20px);
+    opacity: 1;
+}
+
+100% {
+    transform: translatez(0);
+    opacity: 0.5;
+  }
 }
 
 .floating-card {
@@ -257,6 +279,7 @@ nav .active {
     align-self: flex-end;
     width: 400px;
     transform: rotatex(200deg);
+    z-index: -1;
 }
 
 /* STATS */
